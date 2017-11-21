@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wba-UC-GVm" customClass="HamburgerToArrow" customModule="HamburgerToArrowExample" customModuleProvider="target">
-                                <rect key="frame" x="174.5" y="320.5" width="25" height="25"/>
+                                <rect key="frame" x="175" y="271" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="UtF-jM-z2T"/>
                                     <constraint firstAttribute="width" constant="25" id="prN-6g-Xgx"/>
@@ -28,16 +28,26 @@
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9vs-6k-eHe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGd-bM-XqV" customClass="HamburgerToQuit" customModule="HamburgerToArrowExample" customModuleProvider="target">
+                                <rect key="frame" x="174.5" y="396" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="43m-Ek-dR2"/>
+                                    <constraint firstAttribute="height" constant="25" id="Ibj-jF-CTX"/>
+                                </constraints>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Wba-UC-GVm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1oZ-fd-pYS"/>
-                            <constraint firstItem="Wba-UC-GVm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RTD-Fg-1KJ"/>
+                            <constraint firstItem="Wba-UC-GVm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="RTD-Fg-1KJ"/>
+                            <constraint firstItem="mGd-bM-XqV" firstAttribute="top" secondItem="Wba-UC-GVm" secondAttribute="bottom" constant="100" id="fc3-ik-fz4"/>
+                            <constraint firstItem="mGd-bM-XqV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="r4S-5Q-bY1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="hamburgerArrow" destination="Wba-UC-GVm" id="rL2-mK-oX3"/>
+                        <outlet property="hamburgerQuit" destination="mGd-bM-XqV" id="h77-6h-QR1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

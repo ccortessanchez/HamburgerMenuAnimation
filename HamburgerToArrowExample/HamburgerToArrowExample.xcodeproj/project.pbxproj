@@ -13,6 +13,8 @@
 		7D709D341FC321F400C1777D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D709D331FC321F400C1777D /* Assets.xcassets */; };
 		7D709D371FC321F400C1777D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D709D351FC321F400C1777D /* LaunchScreen.storyboard */; };
 		7D709D3F1FC3220A00C1777D /* HamburgerToArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D709D3E1FC3220A00C1777D /* HamburgerToArrow.swift */; };
+		7DED7F411FC437270020C78D /* Hamburger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DED7F401FC437270020C78D /* Hamburger.swift */; };
+		7DED7F431FC4387C0020C78D /* HamburgerToQuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DED7F421FC4387C0020C78D /* HamburgerToQuit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		7D709D361FC321F400C1777D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D709D381FC321F400C1777D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D709D3E1FC3220A00C1777D /* HamburgerToArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HamburgerToArrow.swift; path = ../HamburgerToArrow.swift; sourceTree = "<group>"; };
+		7DED7F401FC437270020C78D /* Hamburger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Hamburger.swift; path = ../Hamburger.swift; sourceTree = "<group>"; };
+		7DED7F421FC4387C0020C78D /* HamburgerToQuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HamburgerToQuit.swift; path = ../HamburgerToQuit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +44,9 @@
 		7D709D201FC321F400C1777D = {
 			isa = PBXGroup;
 			children = (
+				7DED7F401FC437270020C78D /* Hamburger.swift */,
 				7D709D3E1FC3220A00C1777D /* HamburgerToArrow.swift */,
+				7DED7F421FC4387C0020C78D /* HamburgerToQuit.swift */,
 				7D709D2B1FC321F400C1777D /* HamburgerToArrowExample */,
 				7D709D2A1FC321F400C1777D /* Products */,
 			);
@@ -139,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DED7F431FC4387C0020C78D /* HamburgerToQuit.swift in Sources */,
+				7DED7F411FC437270020C78D /* Hamburger.swift in Sources */,
 				7D709D3F1FC3220A00C1777D /* HamburgerToArrow.swift in Sources */,
 				7D709D2F1FC321F400C1777D /* ViewController.swift in Sources */,
 				7D709D2D1FC321F400C1777D /* AppDelegate.swift in Sources */,

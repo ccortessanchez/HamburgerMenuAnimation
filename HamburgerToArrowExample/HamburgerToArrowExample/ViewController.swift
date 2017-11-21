@@ -11,14 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var hamburgerArrow: HamburgerToArrow!
+    @IBOutlet weak var hamburgerQuit: HamburgerToQuit!
     @IBAction func buttonTapped(_ sender: Any) {
         print("Button is tapped")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        hamburgerArrow.animationDuration = 0.5
     }
 }
 
