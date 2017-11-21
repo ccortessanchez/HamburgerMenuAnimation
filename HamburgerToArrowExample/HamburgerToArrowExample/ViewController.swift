@@ -15,5 +15,10 @@ class ViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: Any) {
         print("Button is tapped")
     }
+    
+    override func viewDidLoad() {
+        hamburgerQuit.animationDuration = 1.0
+        hamburgerQuit.strokesColor = UIColor.red
+    }
 }
 

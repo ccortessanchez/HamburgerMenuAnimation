@@ -8,13 +8,13 @@ class HamburgerToArrow: Hamburger {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        initializeHamburger()
+        initializeHamburger(with: UIColor.black)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        initializeHamburger()
+        initializeHamburger(with: UIColor.black)
     }
     
     func toArrow() {

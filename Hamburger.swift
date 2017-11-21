@@ -4,18 +4,24 @@ import UIKit
 class Hamburger: UIButton {
     
     public var animationDuration: CFTimeInterval = 0.5
+    public var strokesColor: UIColor = UIColor.black {
+        didSet {
+            initializeHamburger(with: strokesColor)
+        }
+    }
+    
     internal let topStroke = CAShapeLayer()
     internal let middleStroke = CAShapeLayer()
     internal let bottomStroke = CAShapeLayer()
     
-    internal func initializeHamburger() {
+    internal func initializeHamburger(with color: UIColor) {
         // TOP STROKE
         let strokePath = UIBezierPath()
         strokePath.move(to: CGPoint(x: 0, y: 0))
         strokePath.addLine(to: CGPoint(x: self.frame.width, y: 0))
         topStroke.path = strokePath.cgPath
         topStroke.lineWidth = 5.0
-        topStroke.strokeColor = UIColor.black.cgColor
+        topStroke.strokeColor = strokesColor.cgColor
         topStroke.lineCap = kCALineCapRound
         layer.addSublayer(topStroke)
         
@@ -25,7 +31,7 @@ class Hamburger: UIButton {
         strokePath.addLine(to: CGPoint(x: self.frame.width, y: self.frame.height / 2))
         middleStroke.path = strokePath.cgPath
         middleStroke.lineWidth = 5.0
-        middleStroke.strokeColor = UIColor.black.cgColor
+        middleStroke.strokeColor = strokesColor.cgColor
         middleStroke.lineCap = kCALineCapRound
         layer.addSublayer(middleStroke)
         
@@ -35,7 +41,7 @@ class Hamburger: UIButton {
         strokePath.addLine(to: CGPoint(x: self.frame.width, y: self.frame.height))
         bottomStroke.path = strokePath.cgPath
         bottomStroke.lineWidth = 5.0
-        bottomStroke.strokeColor = UIColor.black.cgColor
+        bottomStroke.strokeColor = strokesColor.cgColor
         bottomStroke.lineCap = kCALineCapRound
         layer.addSublayer(bottomStroke)
     }
