@@ -3,7 +3,8 @@ import UIKit
 
 class HamburgerToArrow: UIButton {
     
-    var isArrow: Bool = false
+    public var animationDuration: CFTimeInterval = 1.0
+    private var isArrow: Bool = false
     
     let topStroke = CAShapeLayer()
     let middleStroke = CAShapeLayer()
@@ -60,10 +61,10 @@ class HamburgerToArrow: UIButton {
         strokePath.addLine(to: CGPoint(x: self.frame.width / 2, y: 0))
         let topAnimation = CABasicAnimation(keyPath: "path")
         topAnimation.toValue = strokePath.cgPath
-        topAnimation.duration = 1.0
+        topAnimation.duration = animationDuration
         topAnimation.fillMode = kCAFillModeForwards
         topAnimation.isRemovedOnCompletion = false
-        topStroke.add(topAnimation, forKey: "topStrokeAnimation")
+        topStroke.add(topAnimation, forKey: "topStrokeAnimationArrow")
         
         // BOTTOM STROKE ANIMATION
         strokePath.removeAllPoints()
@@ -71,14 +72,34 @@ class HamburgerToArrow: UIButton {
         strokePath.addLine(to: CGPoint(x: self.frame.width / 2, y: self.frame.height))
         let bottomAnimation = CABasicAnimation(keyPath: "path")
         bottomAnimation.toValue = strokePath.cgPath
-        bottomAnimation.duration = 1.0
+        bottomAnimation.duration = animationDuration
         bottomAnimation.fillMode = kCAFillModeForwards
         bottomAnimation.isRemovedOnCompletion = false
-        bottomStroke.add(bottomAnimation, forKey: "bottomStrokeAnimation")
+        bottomStroke.add(bottomAnimation, forKey: "bottomStrokeAnimationArrow")
     }
     
     private func toHamburger() {
+        // TOP STROKE ANIMATION
+        let strokePath = UIBezierPath()
+        strokePath.move(to: CGPoint(x: 0, y: 0))
+        strokePath.addLine(to: CGPoint(x: self.frame.width, y: 0))
+        let topAnimation = CABasicAnimation(keyPath: "path")
+        topAnimation.toValue = strokePath.cgPath
+        topAnimation.duration = animationDuration
+        topAnimation.fillMode = kCAFillModeForwards
+        topAnimation.isRemovedOnCompletion = false
+        topStroke.add(topAnimation, forKey: "topStrokeAnimationHamburger")
         
+        // BOTTOM STROKE ANIMATION
+        strokePath.removeAllPoints()
+        strokePath.move(to: CGPoint(x: 0, y: self.frame.height))
+        strokePath.addLine(to: CGPoint(x: self.frame.width, y: self.frame.height))
+        let bottomAnimation = CABasicAnimation(keyPath: "path")
+        bottomAnimation.toValue = strokePath.cgPath
+        bottomAnimation.duration = animationDuration
+        bottomAnimation.fillMode = kCAFillModeForwards
+        bottomAnimation.isRemovedOnCompletion = false
+        bottomStroke.add(bottomAnimation, forKey: "bottomStrokeAnimationHamburger")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
