@@ -1,5 +1,6 @@
 # HamburgerMenuAnimation
-A UIButton "Hamburger Menu" which turns into a "back arrow" button or a "quit" button.
+A UIButton "Hamburger Menu" which turns into a "back arrow" button or a "quit" button.<br/>
+<img src="https://i.imgur.com/JiKCJol.gif" data-canonical-src="https://i.imgur.com/JiKCJol.gif" width="180"/>
 
 ## Installation
 For now, only the manual installation is available. Copy the 3 source files in your project to make it work. If you only want to use **HamburgerToArrow** or **HamburgerToQuit**, you only need to copy `Hamburger.swift` and one of these two files : `HamburgerToArrow.swift` or `HamburgerToQuit.swift`.
