@@ -44,21 +44,16 @@ class HamburgerButton: UIButton {
     private let middleStroke = CAShapeLayer()
     private let bottomStroke = CAShapeLayer()
     
-    private var frameHeight: CGFloat = 0.0
-    private var frameWidth: CGFloat = 0.0
-    private var frameX: CGFloat = 0.0
-    private var frameY: CGFloat = 0.0
+    private let frameHeight: CGFloat
+    private let frameWidth: CGFloat
+    private let frameX: CGFloat
+    private let frameY: CGFloat
     private let paddingX: CGFloat = 5.0
     private let paddingY: CGFloat = 7.0
     
     var showsMenu: Bool = false {
         didSet {
-            if self.showsMenu == true {
-                toQuit()
-            }
-            else {
-                toHamburger()
-            }
+            self.showsMenu ? toQuit() : toHamburger()
         }
     }
     
@@ -73,10 +68,8 @@ class HamburgerButton: UIButton {
         initializeHamburger(with: UIColor.white)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        initializeHamburger(with: UIColor.white)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func moveAndAddLine(origin: CGPoint, lineEnd: CGPoint) -> UIBezierPath {
@@ -153,7 +146,6 @@ class HamburgerButton: UIButton {
             return
         }
         middleStroke.add(animation, forKey: StrokeAnimationKey.middleQuit.rawValue)
-        
         
         // BOTTOM STROKE ANIMATION
         animateStroke(origin: CGPoint(x: frameX, y: frameHeight + paddingY), lineEnd: CGPoint(x: frameWidth, y: frameY), animationKey: .path, stroke: bottomStroke, strokeAnimationKey: .bottomQuit)
